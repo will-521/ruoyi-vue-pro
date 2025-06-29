@@ -2,6 +2,7 @@ package cn.iocoder.yudao.module.erp.controller.admin.finance.vo.account;
 
 import cn.iocoder.yudao.framework.common.enums.CommonStatusEnum;
 import cn.iocoder.yudao.framework.common.validation.InEnum;
+import com.alibaba.excel.annotation.ExcelProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
@@ -29,6 +30,10 @@ public class ErpAccountSaveReqVO {
     @NotNull(message = "开启状态不能为空")
     @InEnum(value = CommonStatusEnum.class)
     private Integer status;
+
+    @Schema(description = "是否默认", example = "1")
+    @ExcelProperty("是否默认")
+    private Boolean defaultStatus;
 
     @Schema(description = "排序", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")
     @NotNull(message = "排序不能为空")

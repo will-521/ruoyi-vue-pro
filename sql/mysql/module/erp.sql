@@ -8,13 +8,13 @@ CREATE TABLE erp_account
     `id`           bigint       NOT NULL AUTO_INCREMENT COMMENT '结算账户编号',
     create_time    DATETIME     NOT NULL COMMENT '创建时间',
     update_time    DATETIME     NOT NULL COMMENT '更新时间',
-    deleted        INT          NOT NULL DEFAULT 0 COMMENT '是否删除 (0-未删除, 1-已删除)',
+    deleted        TINYINT          NOT NULL DEFAULT 0 COMMENT '是否删除 (0-未删除, 1-已删除)',
     name           VARCHAR(255) NOT NULL COMMENT '账户名称',
-    no             VARCHAR(255) NOT NULL COMMENT '账户编码',
+    `no`             VARCHAR(255) NOT NULL COMMENT '账户编码',
     remark         TEXT COMMENT '备注',
-    status         INT          NOT NULL COMMENT '开启状态',
+    status         INT          NOT NULL  COMMENT '开启状态',
     sort           INT          NOT NULL COMMENT '排序',
-    default_status BOOLEAN      NOT NULL COMMENT '是否默认',
+    default_status BOOLEAN      NOT NULL default 0 COMMENT '是否默认',
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT ='ERP 结算账户表';
